@@ -1,17 +1,10 @@
 [project]
-name = "python-pdm-template"
-description = "A Project Template of Python with PDM"
+name = "t-smote"
+description = "Unofficial Implementation of Temporal-oriented SMOTE"
 authors = [{ name = "杜 世橋 Du Shiqiao", email = "lucidfrontier.45@gmail.com" }]
 license = { text = "MIT" }
 dynamic = ["version"]
 requires-python = ">=3.11"
-dependencies = ["fastapi>=0.110.0", "uvicorn>=0.29.0"]
-
-[project.optional-dependencies]
-server = ["uvicorn[standard]>=0.29.0"]
-
-[project.scripts]
-app = "app.cli:main"
 
 [build-system]
 requires = ["pdm-backend"]
@@ -19,7 +12,7 @@ build-backend = "pdm.backend"
 
 [tool.pdm.version]
 source = "file"
-path = "src/app/version.py"
+path = "src/tsmote/__init__.py"
 
 [tool.pdm.dev-dependencies]
 dev = ["black>=24.3.0", "ruff>=0.3.4", "pyright>=1.1.355", "pytest-cov>=4.1.0"]
@@ -29,7 +22,7 @@ black = "black ."
 pyright = "pyright ."
 ruff_lint = "ruff check ."
 ruff_fix = "ruff check --fix-only ."
-test = "pytest tests --cov=app --cov-report=term --cov-report=xml"
+test = "pytest tests --cov=tsmote --cov-report=term --cov-report=xml"
 format = { composite = ["ruff_fix", "black"] }
 lint = { composite = ["ruff_lint", "pyright"] }
 check = { composite = ["format", "lint", "test"] }
