@@ -5,6 +5,7 @@ authors = [{ name = "杜 世橋 Du Shiqiao", email = "lucidfrontier.45@gmail.com
 license = { text = "MIT" }
 dynamic = ["version"]
 requires-python = ">=3.11"
+dependencies = ["jaxtyping>=0.2.28"]
 
 [build-system]
 requires = ["pdm-backend"]
@@ -40,6 +41,7 @@ target-version = "py311"
 
 [tool.ruff.lint]
 select = ["E", "F", "W"]
+ignore = ["F722"]
 # add directory names to exclude from analysis
 exclude = ["deps"]
 
